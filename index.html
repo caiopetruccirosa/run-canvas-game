@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Jogo</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/classes.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+	<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+		body {
+			background: #3f8630;
+		}
+        
+		@font-face
+		{
+			font-family: 'enigma';
+			src: url('./fonte/enigma.ttf');
+		}
+
+		#btnPausar {
+			border: none;
+			background: indigo;
+			border-bottom: 5px solid navy;
+			font-family: "enigma";
+			font-size: 2em;
+			font-weight: bolder;
+			color: white;
+			border-radius: 10px;
+			padding: 10px 130px;
+			outline: none;
+		}
+
+		#btnPausar:active {
+			position: relative;
+			background: #f44336;
+			top: 5px;
+			border: none;
+		}
+
+		#lbPontuacao {
+			font-family: "enigma";
+			margin: 0 20px;
+			color: indigo;
+			font-size: 2em;
+		}
+        
+        #instrucoes {
+            font-family: "enigma";
+			background: indigo;
+            color: white;
+			font-size: 2em;
+            word-wrap: break-word;
+            width: 70%;
+            padding: 1% 2%;
+            border-radius: 15px;
+        }
+	</style>
+
+</head>
+
+<body onload="iniciar()" onkeydown="testarTecla()">
+    
+    <center>
+		<canvas id="meuCanvas" width="512" height="544">
+			Atualize seu browser
+		</canvas>
+		<div id="instrucoes">
+            COMO JOGAR:
+            <br>
+            [ESPAÇO] - caso tenha a arma, aperte [ESPAÇO] para atacar;
+            <br>
+            Setas ou WASD - teclas para a movimentação do personagem;
+            <br><br>
+            OBJETIVO:
+            <br>
+            Sobreviva e consiga o maior número de pontos possível    
+        </div>
+        <br>    
+		<label id="lbPontuacao"></label>
+		<input type="button" value="PAUSAR" id="btnPausar" onclick="pausar()">
+    </center>
+
+</body>
+
+</html>
